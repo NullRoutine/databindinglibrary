@@ -16,8 +16,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 
-import com.twq.databindinghelper.util.AppUtils;
-
 import java.util.ArrayList;
 
 /**
@@ -135,7 +133,7 @@ public abstract class DataBindingActivity<K extends ViewDataBinding> extends App
      */
     @TargetApi(Build.VERSION_CODES.M)
     private void requestPermission() {
-        if (AppUtils.getAndroidVersion(Build.VERSION_CODES.M)) {
+        if (getAndroidVersion(Build.VERSION_CODES.M)) {
             String[] permissions = getPermission();
             if (mPermissionList == null) {
                 mPermissionList = new ArrayList<>();
@@ -213,5 +211,14 @@ public abstract class DataBindingActivity<K extends ViewDataBinding> extends App
             }
         }
         return result;
+    }
+    /*判断当前版本是不是大于version*/
+    public  Boolean getAndroidVersion(int version) {
+        if (Build.VERSION.SDK_INT >= version) {
+            return true;
+
+        } else {
+            return false;
+        }
     }
 }
