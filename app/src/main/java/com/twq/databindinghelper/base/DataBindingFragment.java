@@ -1,4 +1,4 @@
-package twq.com.databindinglibrary.base;
+package com.twq.databindinghelper.base;
 
 import android.content.Context;
 import android.databinding.DataBindingUtil;
