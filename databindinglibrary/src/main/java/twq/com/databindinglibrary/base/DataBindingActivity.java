@@ -1,4 +1,4 @@
-package com.twq.databindinghelper.base;
+package twq.com.databindinglibrary.base;
 
 import android.annotation.TargetApi;
 import android.app.Activity;
@@ -16,9 +16,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 
-import com.twq.databindinghelper.util.AppUtils;
-
 import java.util.ArrayList;
+
+import twq.com.databindinglibrary.util.AppUtils;
 
 /**
  * 使用dataBinding项目（带6.0权限检测简单封装）

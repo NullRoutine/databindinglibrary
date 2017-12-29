@@ -2,8 +2,9 @@ package com.twq.databindinghelper;
 
 import android.os.Bundle;
 
-import com.twq.databindinghelper.base.DataBindingActivity;
 import com.twq.databindinghelper.databinding.ActivityMainBinding;
+
+import twq.com.databindinglibrary.base.DataBindingActivity;
 
 public class MainActivity extends DataBindingActivity<ActivityMainBinding> {
 
