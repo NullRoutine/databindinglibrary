@@ -2,10 +2,9 @@ package com.twq.databindinghelper;
 
 import android.os.Bundle;
 
-import com.twq.databindinghelper.base.DataBindingActivity;
 import com.twq.databindinghelper.databinding.ActivityMainBinding;
 
-public class MainActivity extends DataBindingActivity<ActivityMainBinding> {
+public class MainActivity extends com.twq.databindinghelper.base.DataBindingActivity<ActivityMainBinding> {
 
 
     @Override
