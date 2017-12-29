@@ -116,7 +116,9 @@ public abstract class DataBindingActivity<K extends ViewDataBinding> extends App
     @Override
     protected void onDestroy() {
         super.onDestroy();
-
+        if (mContext != null) {
+            mContext = null;
+        }
     }
 
     /**
