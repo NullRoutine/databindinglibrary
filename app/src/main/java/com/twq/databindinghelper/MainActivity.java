@@ -1,6 +1,8 @@
 package com.twq.databindinghelper;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Toast;
 
 import com.twq.databindinghelper.base.DataBindingActivity;
 import com.twq.databindinghelper.databinding.ActivityMainBinding;
@@ -13,7 +15,12 @@ import com.twq.databindinghelper.databinding.ActivityMainBinding;
 public class MainActivity extends DataBindingActivity<ActivityMainBinding> {
     @Override
     public void create(Bundle savedInstanceState) {
-
+        getBinding().img.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast.makeText(v.getContext(), "==>", Toast.LENGTH_LONG).show();
+            }
+        });
     }
 
     @Override
