@@ -24,6 +24,7 @@ public class RefreshLayout extends ViewGroup {
     private TextView tvHead;
     // 用于平滑滑动的Scroller对象
     private Scroller mLayoutScroller;
+    private static final float SCROLL_RATIO = 0.3f;// 阻尼系数
 
     public RefreshLayout(Context context) {
         super(context);

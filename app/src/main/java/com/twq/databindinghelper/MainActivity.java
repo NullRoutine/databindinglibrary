@@ -1,11 +1,12 @@
 package com.twq.databindinghelper;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
-import android.widget.Toast;
 
 import com.twq.databindinghelper.base.DataBindingActivity;
 import com.twq.databindinghelper.databinding.ActivityMainBinding;
+import com.twq.databindinghelper.view.dialog.CommonDialog;
 
 /**
  * 入口
@@ -13,12 +14,22 @@ import com.twq.databindinghelper.databinding.ActivityMainBinding;
  */
 
 public class MainActivity extends DataBindingActivity<ActivityMainBinding> {
+    private int a;
+
     @Override
     public void create(Bundle savedInstanceState) {
+        try {
+            a = Integer.parseInt(null);
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        Log.e("TAG", "++" + a);
         getBinding().img.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Toast.makeText(v.getContext(), "==>", Toast.LENGTH_LONG).show();
+//                Toast.makeText(v.getContext(), "==>", Toast.LENGTH_LONG).show();
+                CommonDialog commonDialog = CommonDialog.newInstance();
+                commonDialog.showDialog(commonDialog, getSupportFragmentManager());
             }
         });
     }

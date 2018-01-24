@@ -13,6 +13,7 @@ import android.widget.ScrollView;
 import com.twq.databindinghelper.util.DeviceUtil;
 
 /**
+ * 回弹scrollview
  * Created by Administrator on 2018/1/23 0023.
  */
 
