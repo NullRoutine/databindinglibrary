@@ -1,0 +1,15 @@
+# databindinglibrary
+
+1.databinging辅助类DataBindingActivity
+
+继承这个类需要查找Id可以使用getBinding()方法，包括model数据绑定
+
+2.BaseDialogFragment继承系统DialogFragment
+
+注意其中的show方法，这里用的不是系统提供的show方法，原因是因为系统的方法在使用的commit方法是在Activity的onSaveInstanceState()之后调用的，
+
+这样会出错，因为onSaveInstanceState方法是在该Activity即将被销毁前调用，来保存Activity数据的，如果在保存玩状态后
+
+再给它添加Fragment就会出错。解决办法就是把commit（）方法替换成 commitAllowingStateLoss()就行
+
+了，其效果是一样的。
