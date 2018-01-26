@@ -6,7 +6,7 @@ import android.view.View;
 
 import com.twq.databindinghelper.base.DataBindingActivity;
 import com.twq.databindinghelper.databinding.ActivityMainBinding;
-import com.twq.databindinghelper.view.dialog.CommonDialog;
+import com.twq.databindinghelper.module.AnimatorActivity;
 
 /**
  * 入口
@@ -27,9 +27,9 @@ public class MainActivity extends DataBindingActivity<ActivityMainBinding> {
         getBinding().img.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-//                Toast.makeText(v.getContext(), "==>", Toast.LENGTH_LONG).show();
-                CommonDialog commonDialog = CommonDialog.newInstance();
-                commonDialog.showDialog(commonDialog, getSupportFragmentManager());
+                AnimatorActivity.launch(mContext);
+//                CommonDialog commonDialog = CommonDialog.newInstance();
+//                commonDialog.showDialog(commonDialog, getSupportFragmentManager());
             }
         });
     }

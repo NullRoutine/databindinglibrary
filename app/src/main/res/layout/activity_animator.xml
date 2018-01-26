@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <com.twq.databindinghelper.view.SpringBackScrollview
+            android:id="@+id/scrollView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:fadingEdge="none">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <Button
+                    android:id="@+id/button"
+                    android:layout_width="96dp"
+                    android:layout_height="48dp"
+                    android:layout_gravity="center"
+                    android:text="按钮"
+                    android:visibility="gone"
+                    tools:ignore="HardcodedText" />
+
+                <ImageView
+                    android:id="@+id/img"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:scaleType="centerCrop"
+                    android:src="@mipmap/ic_app" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="1500dp"
+                    android:orientation="vertical">
+
+                </LinearLayout>
+            </LinearLayout>
+        </com.twq.databindinghelper.view.SpringBackScrollview>
+
+
+        <RelativeLayout
+            android:id="@+id/layout_toolbar"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:background="@android:color/white">
+
+            <LinearLayout
+                android:id="@+id/layout_title"
+                android:layout_width="70dp"
+                android:layout_height="30dp"
+                android:layout_alignParentRight="true"
+                android:layout_marginTop="10dp"
+                android:background="@drawable/shape_bg"
+                android:gravity="center">
+                <!--//这里TextView高度要包裹-->
+                <TextView
+                    android:id="@+id/tv_title"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:drawableLeft="@mipmap/search"
+                    android:gravity="center_vertical"
+                    android:maxLines="1"
+                    android:text="搜索"
+                    android:textColor="#8A8A8A"
+                    tools:ignore="HardcodedText" />
+            </LinearLayout>
+        </RelativeLayout>
+
+    </RelativeLayout>
+</layout>
