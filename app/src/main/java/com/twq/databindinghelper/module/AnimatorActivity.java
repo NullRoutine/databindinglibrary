@@ -16,7 +16,6 @@ import android.widget.RelativeLayout;
 
 import com.twq.databindinghelper.R;
 import com.twq.databindinghelper.base.DataBindingActivity;
-import com.twq.databindinghelper.bean.ViewWrapper;
 import com.twq.databindinghelper.databinding.ActivityAnimatorBinding;
 import com.twq.databindinghelper.util.DeviceUtil;
 
@@ -53,15 +52,15 @@ public class AnimatorActivity extends DataBindingActivity<ActivityAnimatorBindin
                 //改变toolbar的透明度
                 changeToolbarAlpha();
                 if (getBinding().scrollView.getScrollY() >= getBinding().img.getHeight() - getBinding().layoutToolbar.getHeight() && !isExpand) {
-//                    exPand();//靠系统提供的Transition实现view宽度改变
+                    exPand();//靠系统提供的Transition实现view宽度改变
                     isExpand = true;
-                    ObjectAnimator objectAnimator = ObjectAnimator.ofInt(new ViewWrapper(getBinding().layoutTitle), "width", ScreenWidth);//这是靠动画来改变view宽度
-                    setAnimator(objectAnimator, 1);
+//                    ObjectAnimator objectAnimator = ObjectAnimator.ofInt(new ViewWrapper(getBinding().layoutTitle), "width", ScreenWidth);//这是靠动画来改变view宽度
+//                    setAnimator(objectAnimator, 1);
                 } else if (getBinding().scrollView.getScrollY() <= 0 && isExpand) {
-//                    reDuce();
+                    reDuce();
                     isExpand = false;
-                    ObjectAnimator objectAnimator = ObjectAnimator.ofInt(new ViewWrapper(getBinding().layoutTitle), "width", dip2px(70));
-                    setAnimator(objectAnimator, 0);
+//                    ObjectAnimator objectAnimator = ObjectAnimator.ofInt(new ViewWrapper(getBinding().layoutTitle), "width", dip2px(70));
+//                    setAnimator(objectAnimator, 0);
                 }
             }
         });
@@ -126,7 +125,7 @@ public class AnimatorActivity extends DataBindingActivity<ActivityAnimatorBindin
 
             }
         });
-        objectAnimator.setDuration(100);
+        objectAnimator.setDuration(300);
         objectAnimator.start();
     }
 
