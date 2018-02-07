@@ -17,6 +17,7 @@
             </intent-filter>
         </activity>
         <activity android:name=".module.AnimatorActivity" />
+        <activity android:name=".module.TestKotlinActivity" />
     </application>
 
 </manifest>
