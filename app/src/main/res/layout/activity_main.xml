@@ -24,11 +24,33 @@
                 android:layout_height="match_parent"
                 android:orientation="vertical">
 
-                <ImageView
+                <TextView
                     android:id="@+id/img"
                     android:layout_width="match_parent"
-                    android:layout_height="match_parent"
-                    android:background="@drawable/ic_launcher" />
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/ic_launcher"
+                    android:text=".9图" />
+
+                <Button
+                    android:id="@+id/button_search"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_margin="12dp"
+                    android:text="仿简书搜索框" />
+
+                <Button
+                    android:id="@+id/button_dialog"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_margin="12dp"
+                    android:text="通用dialog" />
+
+                <Button
+                    android:id="@+id/button_test"
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:layout_margin="12dp"
+                    android:text="通用上拉下拉" />
             </LinearLayout>
         </com.twq.databindinghelper.view.SpringBackScrollview>
     </LinearLayout>
