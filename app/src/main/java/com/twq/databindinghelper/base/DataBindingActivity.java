@@ -3,6 +3,7 @@ package com.twq.databindinghelper.base;
 import android.annotation.TargetApi;
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.databinding.DataBindingUtil;
 import android.databinding.ViewDataBinding;
@@ -103,6 +104,13 @@ public abstract class DataBindingActivity<K extends ViewDataBinding> extends App
     @SuppressWarnings("unchecked")
     protected <T extends View> T findView(View view, int res) {
         return (T) view.findViewById(res);
+    }
+
+    protected void launchOne(Context context, Class<? extends DataBindingActivity> c, boolean isFinish) {
+        if (!isFinish) {
+            Intent intent = new Intent(context, c);
+            context.startActivity(intent);
+        }
     }
 
     @Override
@@ -212,8 +220,9 @@ public abstract class DataBindingActivity<K extends ViewDataBinding> extends App
         }
         return result;
     }
+
     /*判断当前版本是不是大于version*/
-    public  Boolean getAndroidVersion(int version) {
+    public Boolean getAndroidVersion(int version) {
         if (Build.VERSION.SDK_INT >= version) {
             return true;
 

@@ -24,6 +24,11 @@
                 android:layout_height="match_parent"
                 android:orientation="vertical">
 
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@mipmap/icon" />
+
                 <TextView
                     android:id="@+id/img"
                     android:layout_width="match_parent"
@@ -51,6 +56,30 @@
                     android:layout_height="48dp"
                     android:layout_margin="12dp"
                     android:text="通用上拉下拉" />
+
+                <cn.passguard.PassGuardEdit
+                    android:id="@+id/edt"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginLeft="20dp"
+                    android:layout_marginRight="20dp"
+                    android:background="@drawable/shape_bg2"
+                    android:focusable="false"
+                    android:hint="Security Text Edit"
+                    android:padding="6dp" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="48dp"
+                    android:orientation="horizontal">
+
+                    <Button
+                        android:id="@+id/button"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="md5" />
+                </LinearLayout>
             </LinearLayout>
         </com.twq.databindinghelper.view.SpringBackScrollview>
     </LinearLayout>
