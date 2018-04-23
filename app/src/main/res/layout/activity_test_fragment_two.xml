@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+
+        <android.support.v4.view.ViewPager
+            android:id="@+id/viewPager"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1" />
+
+
+        <RadioGroup
+            android:id="@+id/radio_bottom"
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:background="@color/colorWhite"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <RadioButton
+                android:id="@+id/radio_home"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:button="@null"
+                android:checked="true"
+                android:drawablePadding="3dp"
+                android:drawableTop="@drawable/bg_home_page"
+                android:gravity="center"
+                android:text="首页"
+                android:textColor="@drawable/text_bg_home_page"
+                android:textSize="12sp" />
+
+            <RadioButton
+                android:id="@+id/radio_center"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:button="@null"
+                android:drawablePadding="3dp"
+                android:drawableTop="@drawable/bg_center"
+                android:gravity="center"
+                android:text="@string/app_name"
+                android:textColor="@drawable/text_bg_home_page"
+                android:textSize="12sp" />
+
+            <RadioButton
+                android:id="@+id/radio_manager"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:button="@null"
+                android:drawablePadding="3dp"
+                android:drawableTop="@drawable/bg_manager"
+                android:gravity="center"
+                android:text="我的"
+                android:textColor="@drawable/text_bg_home_page"
+                android:textSize="12sp" />
+        </RadioGroup>
+    </LinearLayout>
+</layout>

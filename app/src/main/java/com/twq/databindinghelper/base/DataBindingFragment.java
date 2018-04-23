@@ -6,6 +6,7 @@ import android.databinding.ViewDataBinding;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -41,8 +42,9 @@ public abstract class DataBindingFragment<K extends ViewDataBinding> extends Fra
 
     @Nullable
     @Override
-    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+    public View onCreateView(@Nullable LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         try {
+            assert inflater != null;
             mViewDataBinding = DataBindingUtil.inflate(inflater, getLayoutId(), container, false);//慎用true
             if (mViewDataBinding != null) {
                 convertView = mViewDataBinding.getRoot();
@@ -53,6 +55,7 @@ public abstract class DataBindingFragment<K extends ViewDataBinding> extends Fra
             convertView = inflater.inflate(getLayoutId(), container, false);
         }
         this.layoutInflater = inflater;
+        initView();
         return convertView;
     }
 
@@ -82,6 +85,7 @@ public abstract class DataBindingFragment<K extends ViewDataBinding> extends Fra
     @Override
     public void onResume() {
         super.onResume();
+        Log.e("TAG",getClass().getSimpleName()+"onResume");
     }
 
     @Override

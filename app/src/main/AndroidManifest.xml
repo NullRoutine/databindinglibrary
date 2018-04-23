@@ -17,6 +17,8 @@
             </intent-filter>
         </activity>
         <activity android:name=".module.AnimatorActivity" />
+        <activity android:name=".module.TestFragmentActivity" />
+        <activity android:name=".module.TestFragmentTwoActivity" />
     </application>
 
 </manifest>

@@ -29,6 +29,24 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:background="@drawable/ic_launcher" />
+
+                <Button
+                    android:id="@+id/btn_animator"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="仿简书App搜索框" />
+
+                <Button
+                    android:id="@+id/btn_fragment"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="fragment测试" />
+
+                <Button
+                   android:id="@+id/btn_test_fragment"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="fragment测试二(Viewpager)" />
             </LinearLayout>
         </com.twq.databindinghelper.view.SpringBackScrollview>
     </LinearLayout>
