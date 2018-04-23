@@ -13,3 +13,5 @@
 再给它添加Fragment就会出错。解决办法就是把commit（）方法替换成 commitAllowingStateLoss()就行
 
 了，其效果是一样的。
+
+3.添加fragment两种操作方法，一种通过FragmentTransaction一种通过嵌套viewpager实现
