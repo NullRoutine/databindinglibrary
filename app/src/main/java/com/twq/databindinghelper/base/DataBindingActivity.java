@@ -120,6 +120,13 @@ public abstract class DataBindingActivity<K extends ViewDataBinding> extends App
         return (T) view.findViewById(res);
     }
 
+    protected void launchOne(Context context, Class<? extends DataBindingActivity> c, boolean isFinish) {
+        if (!isFinish) {
+            Intent intent = new Intent(context, c);
+            context.startActivity(intent);
+        }
+    }
+
     @Override
     protected void onResume() {
         super.onResume();

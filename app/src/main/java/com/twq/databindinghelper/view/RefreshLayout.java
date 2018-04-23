@@ -122,6 +122,9 @@ public class RefreshLayout extends ViewGroup {
             case MotionEvent.ACTION_UP:
                 if (Math.abs(getScrollY()) >= effectiveScrollY) {
                     mLayoutScroller.startScroll(0, getScrollY(), 0, -(getScrollY() + effectiveScrollY));
+                    // 执行回调
+                    if (mRefreshListener != null)
+                        mRefreshListener.onRefresh();
                 } else {
                     mLayoutScroller.startScroll(0, getScrollY(), 0, -getScrollY());
                 }
@@ -138,5 +141,24 @@ public class RefreshLayout extends ViewGroup {
             scrollTo(0, mLayoutScroller.getCurrY());
         }
         postInvalidate();
+    }
+
+    public interface RefreshListener {
+        void onRefresh();
+    }
+
+    private RefreshListener mRefreshListener;
+
+    public RefreshListener getmRefreshListener() {
+        return mRefreshListener;
+    }
+
+    public void setmRefreshListener(RefreshListener mRefreshListener) {
+        this.mRefreshListener = mRefreshListener;
+    }
+
+    public void RefreshDown() {
+        mLayoutScroller.startScroll(0, getScrollY(), 0, -getScrollY());
+        tvHead.setText("上拉刷新");
     }
 }
