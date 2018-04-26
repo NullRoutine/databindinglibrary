@@ -19,6 +19,7 @@
         <activity android:name=".module.AnimatorActivity" />
         <activity android:name=".module.TestFragmentActivity" />
         <activity android:name=".module.TestFragmentTwoActivity" />
+        <activity android:name=".module.TestTextViewActivity" />
     </application>
 
 </manifest>

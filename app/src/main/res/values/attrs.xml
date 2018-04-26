@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="AutoTextView">
+        <attr name="text_left" format="string" />
+        <attr name="text_left_size" format="dimension|reference" />
+        <attr name="text_left_color" format="color|reference" />
+        <attr name="text_left_padding" format="dimension|reference" />
+
+        <attr name="text_right" format="string" />
+        <attr name="text_right_color" format="color|reference" />
+        <attr name="text_right_size" format="dimension|reference" />
+        <attr name="text_right_padding" format="dimension|reference" />
+
+        <attr name="line_padding" format="dimension|reference" />
+        <attr name="line_height" format="dimension|reference" />
+        <attr name="line_color" format="color|reference" />
+        <attr name="line_isNeed" format="boolean" />
+    </declare-styleable>
+
+</resources>

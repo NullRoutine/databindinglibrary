@@ -6,9 +6,11 @@ import android.view.View;
 
 import com.twq.databindinghelper.base.DataBindingActivity;
 import com.twq.databindinghelper.databinding.ActivityMainBinding;
+import com.twq.databindinghelper.databinding.ActivityMainTwoBinding;
 import com.twq.databindinghelper.module.AnimatorActivity;
 import com.twq.databindinghelper.module.TestFragmentActivity;
 import com.twq.databindinghelper.module.TestFragmentTwoActivity;
+import com.twq.databindinghelper.module.TestTextViewActivity;
 import com.twq.databindinghelper.view.dialog.CommonDialog;
 
 /**
@@ -16,7 +18,7 @@ import com.twq.databindinghelper.view.dialog.CommonDialog;
  * Created by Administrator on 2018/1/5 0005.
  */
 
-public class MainActivity extends DataBindingActivity<ActivityMainBinding> {
+public class MainActivity extends DataBindingActivity<ActivityMainTwoBinding> {
     private int a;
 
     @Override
@@ -46,7 +48,13 @@ public class MainActivity extends DataBindingActivity<ActivityMainBinding> {
                 launch(mContext, TestFragmentActivity.class, isFinishing());
             }
         });
-        findView(R.id.btn_test_fragment).setOnClickListener(new View.OnClickListener() {
+        getBinding().btnTextView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                launch(mContext, TestTextViewActivity.class, isFinishing());
+            }
+        });
+        getBinding().btnFragmentTwo.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 launch(mContext, TestFragmentTwoActivity.class, isFinishing());
@@ -56,6 +64,6 @@ public class MainActivity extends DataBindingActivity<ActivityMainBinding> {
 
     @Override
     protected int getLayoutId() {
-        return R.layout.activity_main;
+        return R.layout.activity_main_two;
     }
 }
