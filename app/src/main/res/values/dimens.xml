@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!--常用单位-->
+    <dimen name="view_distance_0">0dp</dimen>
+    <dimen name="view_distance_line">0.5dp</dimen>
+    <dimen name="view_distance_2">2dp</dimen>
+    <dimen name="view_distance_4">4dp</dimen>
+    <dimen name="view_distance_5">5dp</dimen>
+    <dimen name="view_distance_6">6dp</dimen>
+    <dimen name="view_distance_7">7dp</dimen>
+    <dimen name="view_distance_8">8dp</dimen>
+    <dimen name="view_distance_10">10dp</dimen>
+    <dimen name="view_distance_12">12dp</dimen>
+    <dimen name="view_distance_14">14dp</dimen>
+    <dimen name="view_distance_16">16dp</dimen>
+    <dimen name="view_distance_18">18dp</dimen>
+    <dimen name="view_distance_19">19dp</dimen>
+    <dimen name="view_distance_20">20dp</dimen>
+    <dimen name="view_distance_22">22dp</dimen>
+    <dimen name="view_distance_24">24dp</dimen>
+    <dimen name="view_distance_26">26dp</dimen>
+    <dimen name="view_distance_28">28dp</dimen>
+    <dimen name="view_distance_30">30dp</dimen>
+    <dimen name="view_distance_32">32dp</dimen>
+    <dimen name="view_distance_34">34dp</dimen>
+    <dimen name="view_distance_36">36dp</dimen>
+    <dimen name="view_distance_48">48dp</dimen>
+    <dimen name="view_distance_52">50dp</dimen>
+    <dimen name="view_distance_96">96dp</dimen>
+    <dimen name="view_height">46dp</dimen>
+
+    <!--不同字体大小dimens属性设置 sp单位-->
+    <dimen name="dimen_8_font">8sp</dimen>
+    <dimen name="dimen_9_font">9sp</dimen>
+    <dimen name="dimen_10_font">10sp</dimen>
+    <dimen name="dimens_11_font">11sp</dimen>
+    <dimen name="dimens_12_font">12sp</dimen>
+    <dimen name="dimens_13_font">13sp</dimen>
+    <dimen name="dimens_14_font">14sp</dimen>
+    <dimen name="dimens_15_font">15sp</dimen>
+    <dimen name="dimens_16_font">16sp</dimen>
+    <dimen name="dimens_17_font">17sp</dimen>
+    <dimen name="dimens_18_font">18sp</dimen>
+    <dimen name="dimens_19_font">19sp</dimen>
+    <dimen name="dimens_20_font">20sp</dimen>
+    <dimen name="dimens_21_font">21sp</dimen>
+    <dimen name="dimens_22_font">22sp</dimen>
+    <dimen name="dimens_23_font">23sp</dimen>
+    <dimen name="dimens_24_font">24sp</dimen>
+    <dimen name="dimens_25_font">25sp</dimen>
+    <dimen name="dimens_26_font">26sp</dimen>
+    <dimen name="dimens_28_font">28sp</dimen>
+    <dimen name="dimens_30_font">30sp</dimen>
+
+    <dimen name="toolbar_height">48dp</dimen>
+    <dimen name="subscription_head">200dp</dimen>
+</resources>

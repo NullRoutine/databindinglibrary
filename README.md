@@ -15,3 +15,5 @@
 了，其效果是一样的。
 
 3.添加fragment两种操作方法，一种通过FragmentTransaction一种通过嵌套viewpager实现
+
+4.AutoTextView:继承TextView可以在左右添加文本，底部添加横线，方便常用的条目布局，字体大小颜色均可自定义使用

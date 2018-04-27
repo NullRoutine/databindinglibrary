@@ -54,6 +54,12 @@
                     android:layout_height="match_parent"
                     android:text="TextView测试" />
 
+                <Button
+                    android:id="@+id/btn_toolBar"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="折叠布局测试" />
+
 
             </LinearLayout>
         </com.twq.databindinghelper.view.SpringBackScrollview>

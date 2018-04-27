@@ -20,6 +20,7 @@
         <activity android:name=".module.TestFragmentActivity" />
         <activity android:name=".module.TestFragmentTwoActivity" />
         <activity android:name=".module.TestTextViewActivity" />
+        <activity android:name=".module.CollapsingToolbarLayoutTestActivity" />
     </application>
 
 </manifest>
