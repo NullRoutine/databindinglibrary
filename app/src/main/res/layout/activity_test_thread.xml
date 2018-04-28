@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <Button
+            android:id="@+id/btn_test_newFixedThreadPool"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/view_distance_48"
+            android:layout_marginTop="@dimen/view_distance_12"
+            android:text="测试线程池(newFixedThreadPool )"
+            tools:ignore="HardcodedText" />
+
+        <Button
+            android:id="@+id/btn_newCachedThreadPool"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/view_distance_48"
+            android:layout_marginTop="@dimen/view_distance_12"
+            android:text="测试newCachedThreadPool"
+            tools:ignore="HardcodedText" />
+
+        <Button
+            android:id="@+id/btn_newScheduledThreadPool"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/view_distance_48"
+            android:layout_marginTop="@dimen/view_distance_12"
+            android:text="测试newScheduledThreadPool "
+            tools:ignore="HardcodedText" />
+
+        <Button
+            android:id="@+id/threadPriority"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/view_distance_48"
+            android:layout_marginTop="@dimen/view_distance_12"
+            android:text="测试线程优先级 "
+            tools:ignore="HardcodedText" />
+
+        <TextView
+            android:id="@+id/tv_start"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/view_distance_48"
+            android:gravity="center"
+            android:text="开启线程" />
+
+        <TextView
+            android:id="@+id/tv_stop"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/view_distance_48"
+            android:gravity="center"
+            android:text="暂停/开始" />
+
+        <TextView
+            android:id="@+id/tv_test"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/view_distance_12"
+            android:text="@string/app_name" />
+    </LinearLayout>
+</layout>

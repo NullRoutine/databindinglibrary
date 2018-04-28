@@ -60,6 +60,12 @@
                     android:layout_height="match_parent"
                     android:text="折叠布局测试" />
 
+                <Button
+                    android:id="@+id/btn_thread"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="Android线程池" />
+
 
             </LinearLayout>
         </com.twq.databindinghelper.view.SpringBackScrollview>

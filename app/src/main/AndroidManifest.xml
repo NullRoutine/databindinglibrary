@@ -21,6 +21,7 @@
         <activity android:name=".module.TestFragmentTwoActivity" />
         <activity android:name=".module.TestTextViewActivity" />
         <activity android:name=".module.CollapsingToolbarLayoutTestActivity" />
+        <activity android:name=".module.TestThreadActivity" />
     </application>
 
 </manifest>
