@@ -127,7 +127,7 @@ public class AutoTextView extends AppCompatTextView {
         if (lineIsNeed) {
             linePaint.setColor(lineColor);
             linePaint.setStrokeWidth(lineHeight);
-            canvas.drawLine(linePadding, getMeasuredHeight() - lineHeight / 2, getMeasuredWidth() - linePadding, getMeasuredHeight() - lineHeight / 2, linePaint);
+            canvas.drawLine(linePadding, getMeasuredHeight() - lineHeight / 2, getMeasuredWidth() - linePadding, getMeasuredHeight() - lineHeight / 2, linePaint);//线从定义的中间点往两边延伸
         }
     }
 }

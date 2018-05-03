@@ -11,7 +11,6 @@ import com.twq.databindinghelper.databinding.ActivityTestThreadBinding;
 import com.twq.databindinghelper.util.CustomThreadPoolExecutor;
 import com.twq.databindinghelper.util.PriorityRunnable;
 
-import java.util.concurrent.Executor;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.PriorityBlockingQueue;
@@ -20,6 +19,7 @@ import java.util.concurrent.ThreadPoolExecutor;
 import java.util.concurrent.TimeUnit;
 
 /**
+ * 线程池测试
  * Created by tang.wangqiang on 2018/4/28.
  */
 
