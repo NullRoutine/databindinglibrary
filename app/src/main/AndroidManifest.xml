@@ -23,6 +23,7 @@
         <activity android:name=".module.CollapsingToolbarLayoutTestActivity" />
         <activity android:name=".module.TestThreadActivity" />
         <activity android:name=".module.TestClockActivity" />
+        <activity android:name=".module.TestWaterBitmapActivity" />
     </application>
 
 </manifest>

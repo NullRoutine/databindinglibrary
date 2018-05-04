@@ -72,6 +72,12 @@
                     android:layout_height="match_parent"
                     android:text="模拟时钟" />
 
+                <Button
+                    android:id="@+id/btn_water"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="水印图片" />
+
             </LinearLayout>
         </com.twq.databindinghelper.view.SpringBackScrollview>
     </LinearLayout>

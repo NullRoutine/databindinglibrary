@@ -17,3 +17,7 @@
 3.添加fragment两种操作方法，一种通过FragmentTransaction一种通过嵌套viewpager实现
 
 4.AutoTextView:继承TextView可以在左右添加文本，底部添加横线，方便常用的条目布局，字体大小颜色均可自定义使用
+
+5.TimeClockView:自定义模拟时钟，主要用到canvas的save,rotate等属性，其中需要注意利用定时器获取时间，防止时间延迟获取，
+
+注意时分秒的构建过程以及文字的画法，注意View的生命周期

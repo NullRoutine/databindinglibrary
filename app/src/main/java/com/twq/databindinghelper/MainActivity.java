@@ -14,6 +14,7 @@ import com.twq.databindinghelper.module.TestFragmentActivity;
 import com.twq.databindinghelper.module.TestFragmentTwoActivity;
 import com.twq.databindinghelper.module.TestTextViewActivity;
 import com.twq.databindinghelper.module.TestThreadActivity;
+import com.twq.databindinghelper.module.TestWaterBitmapActivity;
 import com.twq.databindinghelper.view.dialog.CommonDialog;
 
 /**
@@ -75,10 +76,16 @@ public class MainActivity extends DataBindingActivity<ActivityMainTwoBinding> {
                 launch(mContext, TestThreadActivity.class, isFinishing());
             }
         });
-        findView(R.id.btn_test_clock).setOnClickListener(new View.OnClickListener() {
+        getBinding().btnTestClock.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 launch(mContext, TestClockActivity.class, isFinishing());
+            }
+        });
+        getBinding().btnWater.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                launch(mContext, TestWaterBitmapActivity.class, isFinishing());
             }
         });
     }

@@ -8,10 +8,16 @@ import android.graphics.Rect;
 import android.os.Handler;
 import android.os.Message;
 import android.support.annotation.Nullable;
+import android.support.v4.content.ContextCompat;
 import android.util.AttributeSet;
 import android.view.View;
 
+import com.twq.databindinghelper.R;
+import com.twq.databindinghelper.util.LogUtil;
+
 import java.util.Calendar;
+import java.util.Timer;
+import java.util.TimerTask;
 
 /**
  * 模拟时钟
@@ -30,6 +36,15 @@ public class TimeClockView extends View {
     private int width, height;//时钟宽高
     private Rect textBound;//创建一个矩形
     private Calendar mCalendar;
+    private boolean mAttach = false;
+    private Timer mTimer = new Timer();
+    private TimerTask mTimerTask = new TimerTask() {
+        @Override
+        public void run() {
+            mCalendar = Calendar.getInstance();
+            postInvalidate();
+        }
+    };
 
     private Handler handler = new Handler(new Handler.Callback() {
         @Override
@@ -63,12 +78,12 @@ public class TimeClockView extends View {
 
     private void init(Context context) {
         paintText = new Paint();
-        paintText.setColor(Color.BLUE);
+        paintText.setColor(ContextCompat.getColor(context, R.color.colorAccent));
         paintText.setAntiAlias(true);
         paintText.setStyle(Paint.Style.FILL_AND_STROKE);
 
         paintLine = new Paint();
-        paintLine.setColor(Color.RED);
+        paintLine.setColor(ContextCompat.getColor(context, R.color.colorPrimary));
         paintLine.setAntiAlias(true);
         paintLine.setStrokeWidth(2);
         paintLine.setStyle(Paint.Style.FILL);
@@ -93,8 +108,8 @@ public class TimeClockView extends View {
 
 
         textBound = new Rect();
-
-        handler.sendEmptyMessage(1);
+//        mTimer.schedule(mTimerTask, 0, 1000);
+//        handler.sendEmptyMessage(1);
     }
 
     @Override
@@ -109,29 +124,31 @@ public class TimeClockView extends View {
             width = MeasureSpec.getSize(widthMeasureSpec);
         }
         setMeasuredDimension(width, height);//定下时钟View宽高
+        LogUtil.e("onMeasure");
     }
 
     @Override
     protected void onDraw(Canvas canvas) {
         super.onDraw(canvas);
+        LogUtil.e("onDraw");
         int circleRadius;
         if (width > height) {
-            circleRadius = height / 2 - 30;
+            circleRadius = height / 2 - 130;
         } else {
-            circleRadius = width / 2 - 30;
+            circleRadius = width / 2 - 130;
         }
         for (int i = 1; i <= 60; i++) {
             canvas.save();//保存当前的画布
             if (i % 5 == 0) {
                 canvas.rotate(360 / 60 * i, width / 2, height / 2);
-                paintText.setTextSize(circleRadius / 20);
+                paintText.setTextSize(circleRadius / 17);
                 //如果绘制对应的数字时只进行一次旋转是不能达到目标的，需要再次以书写文字的地方在进行反向旋转这样写出来的就是正向的
                 canvas.rotate(-360 / 60 * i, width / 2, height / 2 - circleRadius + 5);
                 paintText.getTextBounds(String.valueOf(i / 5), 0, String.valueOf(i / 5).length(), textBound);
-                canvas.drawText(String.valueOf(i / 5), width / 2 - textBound.width() / 2, height / 2 - circleRadius + textBound.height() / 2, paintText);
+                canvas.drawText(String.valueOf(i / 5), width / 2 - textBound.width() / 2, height / 2 - circleRadius + textBound.height() / 2 - getBaseline(), paintText);
             } else {
                 canvas.rotate(360 / 60 * i, width / 2, height / 2);
-                canvas.drawCircle(width / 2, height / 2 - circleRadius, 4, paintLine);
+                canvas.drawCircle(width / 2, height / 2 - circleRadius, 7, paintLine);
             }
             canvas.restore();
         }
@@ -156,5 +173,26 @@ public class TimeClockView extends View {
         canvas.rotate(secDegree, width / 2, height / 2);
         canvas.drawLine(width / 2, height / 2 - circleRadius + 50, width / 2, height / 2 + circleRadius / 6, paintSec);
         canvas.restore();
+    }
+
+    @Override
+    protected void onAttachedToWindow() {
+        super.onAttachedToWindow();
+        LogUtil.e("onAttachedToWindow");
+        if (!mAttach) {
+            mAttach = true;
+            mTimer.schedule(mTimerTask, 0, 1000);
+        }
+    }
+
+    @Override
+    protected void onDetachedFromWindow() {
+        super.onDetachedFromWindow();
+        LogUtil.e("onDetachedFromWindow");
+        if (mAttach) {
+            mAttach = false;
+            mTimer.cancel();
+            mTimerTask.cancel();
+        }
     }
 }

@@ -12,6 +12,7 @@
             android:id="@+id/tv_test"
             android:layout_width="match_parent"
             android:layout_height="48dp"
+            android:background="@drawable/test_layer"
             android:gravity="center"
             android:padding="12dp"
             android:text="123"
