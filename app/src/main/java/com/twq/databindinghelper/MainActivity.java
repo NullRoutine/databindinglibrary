@@ -15,6 +15,7 @@ import com.twq.databindinghelper.module.TestFragmentTwoActivity;
 import com.twq.databindinghelper.module.TestTextViewActivity;
 import com.twq.databindinghelper.module.TestThreadActivity;
 import com.twq.databindinghelper.module.TestWaterBitmapActivity;
+import com.twq.databindinghelper.module.WaveActivity;
 import com.twq.databindinghelper.view.dialog.CommonDialog;
 
 /**
@@ -86,6 +87,12 @@ public class MainActivity extends DataBindingActivity<ActivityMainTwoBinding> {
             @Override
             public void onClick(View v) {
                 launch(mContext, TestWaterBitmapActivity.class, isFinishing());
+            }
+        });
+        getBinding().btnWaveView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                launch(mContext, WaveActivity.class, isFinishing());
             }
         });
     }

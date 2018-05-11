@@ -78,6 +78,11 @@
                     android:layout_height="match_parent"
                     android:text="水印图片" />
 
+                <Button
+                    android:id="@+id/btn_wave_view"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="贝塞尔曲线" />
             </LinearLayout>
         </com.twq.databindinghelper.view.SpringBackScrollview>
     </LinearLayout>

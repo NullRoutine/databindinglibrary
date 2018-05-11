@@ -17,4 +17,9 @@
         <attr name="line_isNeed" format="boolean" />
     </declare-styleable>
 
+    <declare-styleable name="FlickerTextView">
+        <attr name="duration_text" format="integer" />
+        <attr name="color_move" format="color|reference" />
+    </declare-styleable>
+
 </resources>

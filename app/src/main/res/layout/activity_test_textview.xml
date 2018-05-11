@@ -16,6 +16,7 @@
             android:gravity="center"
             android:padding="12dp"
             android:text="123"
+            android:visibility="invisible"
             app:line_height="0.5dp"
             app:line_isNeed="true"
             app:text_left="我是绘制出来的"
@@ -24,6 +25,18 @@
             app:text_right_color="@color/colorPrimary"
             app:text_right_padding="20dp"
             app:text_right_size="12sp"
+            tools:ignore="HardcodedText" />
+
+        <com.twq.databindinghelper.view.FlickerTextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="@dimen/view_distance_12"
+            android:text="Loading"
+            android:textColor="#444"
+            android:textSize="32sp"
+            app:color_move="@color/color_app"
+            app:duration_text="2000"
             tools:ignore="HardcodedText" />
     </LinearLayout>
 </layout>

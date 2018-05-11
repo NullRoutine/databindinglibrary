@@ -21,3 +21,5 @@
 5.TimeClockView:自定义模拟时钟，主要用到canvas的save,rotate等属性，其中需要注意利用定时器获取时间，防止时间延迟获取，
 
 注意时分秒的构建过程以及文字的画法，注意View的生命周期
+
+6.FlickerTextView,可以闪烁的TextView，主要用到矩阵的转换，属性动画去驱动变换矩阵
