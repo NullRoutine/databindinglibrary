@@ -8,6 +8,7 @@ import com.twq.databindinghelper.base.DataBindingActivity;
 import com.twq.databindinghelper.databinding.ActivityMainBinding;
 import com.twq.databindinghelper.databinding.ActivityMainTwoBinding;
 import com.twq.databindinghelper.module.AnimatorActivity;
+import com.twq.databindinghelper.module.BluetoothActivity;
 import com.twq.databindinghelper.module.CollapsingToolbarLayoutTestActivity;
 import com.twq.databindinghelper.module.TestClockActivity;
 import com.twq.databindinghelper.module.TestFragmentActivity;
@@ -93,6 +94,12 @@ public class MainActivity extends DataBindingActivity<ActivityMainTwoBinding> {
             @Override
             public void onClick(View v) {
                 launch(mContext, WaveActivity.class, isFinishing());
+            }
+        });
+        findView(R.id.btn_blue).setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                launch(mContext, BluetoothActivity.class, isFinishing());
             }
         });
     }

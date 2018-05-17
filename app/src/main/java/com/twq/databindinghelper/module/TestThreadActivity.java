@@ -72,7 +72,8 @@ public class TestThreadActivity extends DataBindingActivity<ActivityTestThreadBi
         getBinding().threadPriority.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                ExecutorService priorityThreadPool = new ThreadPoolExecutor(3, 3, 0L, TimeUnit.SECONDS, new PriorityBlockingQueue<Runnable>());
+                ExecutorService priorityThreadPool = new ThreadPoolExecutor(3,
+                        3, 0L, TimeUnit.SECONDS, new PriorityBlockingQueue<Runnable>());
                 for (int i = 1; i <= 10; i++) {
                     final int priority = i;
                     priorityThreadPool.execute(new PriorityRunnable(priority) {
@@ -91,9 +92,9 @@ public class TestThreadActivity extends DataBindingActivity<ActivityTestThreadBi
             }
         });
         getBinding().tvStart.setOnClickListener(new View.OnClickListener() {
+
             @Override
             public void onClick(View v) {
-
                 for (int i = 1; i <= 100; i++) {
                     final int priority = i;
                     customThreadPoolExecutor.execute(new PriorityRunnable(priority) {

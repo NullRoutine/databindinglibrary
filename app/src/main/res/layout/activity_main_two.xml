@@ -83,6 +83,12 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:text="贝塞尔曲线" />
+
+                <Button
+                    android:id="@+id/btn_blue"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="蓝牙" />
             </LinearLayout>
         </com.twq.databindinghelper.view.SpringBackScrollview>
     </LinearLayout>
