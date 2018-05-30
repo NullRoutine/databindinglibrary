@@ -7,7 +7,6 @@ import android.bluetooth.BluetoothGatt;
 import android.bluetooth.BluetoothGattCallback;
 import android.bluetooth.BluetoothGattCharacteristic;
 import android.bluetooth.BluetoothGattDescriptor;
-import android.bluetooth.BluetoothGattService;
 import android.bluetooth.BluetoothManager;
 import android.content.BroadcastReceiver;
 import android.content.Context;
@@ -28,7 +27,6 @@ import android.widget.TextView;
 import com.twq.databindinghelper.R;
 import com.twq.databindinghelper.base.DataBindingActivity;
 import com.twq.databindinghelper.databinding.ActivityBluetoothBinding;
-import com.twq.databindinghelper.util.LogUtil;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -199,7 +197,7 @@ public class BluetoothActivity extends DataBindingActivity<ActivityBluetoothBind
                 public void onClick(View v) {
                     //连接设备的方法,返回值为bluetoothgatt类型
                     bluetoothGatt = bd.connectGatt(context, false, mBluetoothGattCallback);
-                    holder.tv_name.setText("连接" + bd.getName() + "中..." + bd.getUuids());
+                    holder.tv_name.setText("连接" + bd.getName() + "中...");
                 }
             });
         }

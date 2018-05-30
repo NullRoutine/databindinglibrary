@@ -17,6 +17,7 @@ import com.twq.databindinghelper.module.TestTextViewActivity;
 import com.twq.databindinghelper.module.TestThreadActivity;
 import com.twq.databindinghelper.module.TestWaterBitmapActivity;
 import com.twq.databindinghelper.module.WaveActivity;
+import com.twq.databindinghelper.module.choosepicture.ChoosePictureActivity;
 import com.twq.databindinghelper.view.dialog.CommonDialog;
 
 /**
@@ -96,10 +97,16 @@ public class MainActivity extends DataBindingActivity<ActivityMainTwoBinding> {
                 launch(mContext, WaveActivity.class, isFinishing());
             }
         });
-        findView(R.id.btn_blue).setOnClickListener(new View.OnClickListener() {
+        getBinding().btnBlue.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 launch(mContext, BluetoothActivity.class, isFinishing());
+            }
+        });
+        getBinding().btnPhoto.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                launch(mContext, ChoosePictureActivity.class, isFinishing());
             }
         });
     }
