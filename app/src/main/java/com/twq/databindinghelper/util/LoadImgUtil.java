@@ -8,6 +8,8 @@ import com.bumptech.glide.Glide;
 import com.twq.databindinghelper.R;
 import com.twq.databindinghelper.view.GlideCircleTransform;
 
+import java.io.File;
+
 /**
  * 图片加载
  * Created by Administrator on 2017/8/23 0023.

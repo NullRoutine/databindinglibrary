@@ -11,6 +11,8 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import com.twq.databindinghelper.util.LogUtil;
+
 /**
  * 基本fragment
  * Created by Administrator on 2017/12/29 0029.
@@ -56,6 +58,7 @@ public abstract class DataBindingFragment<K extends ViewDataBinding> extends Fra
         }
         this.layoutInflater = inflater;
         initView();
+        LogUtil.e("Fragment onCreateView===>" + this.getClass().getName());
         return convertView;
     }
 

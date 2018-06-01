@@ -15,6 +15,11 @@
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.NFC" />
+    <!-- 要求当前设备必须要有NFC芯片 -->
+    <uses-feature
+        android:name="android.hardware.nfc"
+        android:required="true" />
 
     <application
         android:allowBackup="true"
@@ -52,6 +57,18 @@
         <activity android:name=".module.WaveActivity" />
         <activity android:name=".module.BluetoothActivity" />
         <activity android:name=".module.choosepicture.ChoosePictureActivity" />
+        <activity
+            android:name=".module.PrintActivity"
+            android:launchMode="singleTask">
+            <intent-filter>
+                <action android:name="android.nfc.action.TECH_DISCOVERED" />
+                <!--<action android:name="android.nfc.action.TAG_DISCOVERED" />-->
+                <!--<action android:name="android.nfc.action.NDEF_DISCOVERED"/>-->
+            </intent-filter>
+            <meta-data
+                android:name="android.nfc.action.TECH_DISCOVERED"
+                android:resource="@xml/nfc_tech_filter" />
+        </activity>
     </application>
 
 </manifest>

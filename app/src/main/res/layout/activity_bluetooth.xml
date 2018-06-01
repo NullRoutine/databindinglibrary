@@ -24,6 +24,20 @@
                 android:layout_height="48dp"
                 android:layout_weight="1"
                 android:text="扫描蓝牙" />
+
+            <Button
+                android:id="@+id/btn_read"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:text="读取" />
+
+            <Button
+                android:id="@+id/btn_send"
+                android:layout_width="0dp"
+                android:layout_height="48dp"
+                android:layout_weight="1"
+                android:text="发送" />
         </LinearLayout>
 
         <TextView

@@ -19,10 +19,6 @@
             android:layout_gravity="center"
             android:layout_marginTop="20dp"
             android:src="@mipmap/ic_launcher_round" />
-        <Button
-            android:id="@+id/btn_print"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/view_distance_48"
-            android:text="打印图片" />
+
     </LinearLayout>
 </layout>

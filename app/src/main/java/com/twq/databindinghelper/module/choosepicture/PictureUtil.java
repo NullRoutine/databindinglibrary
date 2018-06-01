@@ -8,6 +8,7 @@ import android.net.Uri;
 import android.os.Build;
 import android.os.Environment;
 import android.provider.MediaStore;
+import android.support.annotation.RequiresApi;
 import android.support.v4.content.ContextCompat;
 import android.support.v4.content.FileProvider;
 import android.support.v4.content.PermissionChecker;
@@ -49,6 +50,14 @@ public class PictureUtil {
         String state = Environment.getExternalStorageState();
         File rootDir = state.equals(Environment.MEDIA_MOUNTED) ? Environment.getExternalStorageDirectory() : activity.getCacheDir();
         folderDir = new File(rootDir.getAbsolutePath() + CAMERA_PATH);
+        createNewFile();
+
+    }
+
+    /**
+     * 防止加载缓存，也可换成bitmap加载
+     */
+    private void createNewFile() {
         try {
             if (!folderDir.exists()) {
                 folderDir.mkdirs();
@@ -68,7 +77,6 @@ public class PictureUtil {
         } catch (Exception e) {
             e.printStackTrace();
         }
-
     }
 
     public File getFolderDir() {
@@ -138,6 +146,7 @@ public class PictureUtil {
     /**
      * 选择相机
      */
+    @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
     public void ChooseCamera() {
         if (hasCamera()) {
             if (hasPermission(Manifest.permission.CAMERA,
@@ -164,6 +173,7 @@ public class PictureUtil {
 
     }
 
+    @RequiresApi(api = Build.VERSION_CODES.JELLY_BEAN)
     public void ChooseImage() {
         if (hasSdcard()) {
             if (hasPermission(Manifest.permission.WRITE_EXTERNAL_STORAGE,

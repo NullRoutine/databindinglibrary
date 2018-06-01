@@ -95,6 +95,12 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:text="头像选择" />
+
+                <Button
+                    android:id="@+id/btn_print"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="打印相关" />
             </LinearLayout>
         </com.twq.databindinghelper.view.SpringBackScrollview>
     </LinearLayout>

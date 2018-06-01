@@ -1,16 +1,19 @@
 package com.twq.databindinghelper.module.fragment;
 
 import android.os.Bundle;
+import android.widget.CheckBox;
 
 import com.twq.databindinghelper.R;
 import com.twq.databindinghelper.base.DataBindingFragment;
 import com.twq.databindinghelper.databinding.FragmentTestBinding;
+import com.twq.databindinghelper.util.LogUtil;
 
 /**
  * Created by tang.wangqiang on 2018/4/23.
  */
 
 public class TestFragment extends DataBindingFragment<FragmentTestBinding> {
+    private CheckBox checkBoxOne, checkBoxOneTwo, checkBoxThree;
 
     public static TestFragment newInstance(String msg) {
         TestFragment fragment = new TestFragment();
@@ -28,11 +31,55 @@ public class TestFragment extends DataBindingFragment<FragmentTestBinding> {
 
     @Override
     protected void initView() {
+        checkBoxOne = convertView.findViewById(R.id.checkbox_one);
+        checkBoxOneTwo = convertView.findViewById(R.id.checkbox_two);
+        checkBoxThree = convertView.findViewById(R.id.checkbox_three);
         Bundle bundle = getArguments();
         assert bundle != null;
         String data = bundle.getString("title");
-        if (data != null) {
-            getBinding().tvTitle.setText(data);
+        if (data != null && data.equals("我是One")) {
+            LogUtil.e("====>" + checkBoxOne.isChecked());
+            LogUtil.e("====>" + checkBoxOneTwo.isChecked());
+            LogUtil.e("====>" + checkBoxThree.isChecked());
+//            checkBoxOne.setChecked(true);
+            checkBoxOne.post(new Runnable() {
+                @Override
+                public void run() {
+                    checkBoxOne.setChecked(true);
+                }
+            });
+            checkBoxOneTwo.post(new Runnable() {
+                @Override
+                public void run() {
+                    checkBoxOneTwo.setChecked(false);
+                }
+            });
+            checkBoxThree.post(new Runnable() {
+                @Override
+                public void run() {
+                    checkBoxThree.setChecked(false);
+                }
+            });
+//            checkBoxOneTwo.setChecked(false);
+//            checkBoxThree.setChecked(false);
+            LogUtil.e("====>" + checkBoxOne.isChecked());
+            LogUtil.e("====>" + checkBoxOneTwo.isChecked());
+            LogUtil.e("====>" + checkBoxThree.isChecked());
+        }
+
+    }
+
+    @Override
+    public void onResume() {
+        super.onResume();
+
+    }
+
+    public void reset() {
+        if (checkBoxOne != null) {
+            checkBoxOne.setChecked(true);
+            checkBoxOneTwo.setChecked(false);
+            checkBoxThree.setChecked(false);
         }
     }
 }

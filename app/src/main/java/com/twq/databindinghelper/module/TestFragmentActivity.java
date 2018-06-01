@@ -56,31 +56,40 @@ public class TestFragmentActivity extends DataBindingActivity<ActivityTestFragme
     private void setTabSelection(int index) {
         // 开启Fragment事务
         FragmentTransaction transaction = mFragmentManager.beginTransaction();
-        hideFragments(transaction);
+//        hideFragments(transaction);
         switch (index) {
             case 0:
                 if (tabOneFragment == null) {
                     tabOneFragment = TestFragment.newInstance("我是One");
-                    transaction.add(R.id.id_content, tabOneFragment);
-                } else {
-                    transaction.show(tabOneFragment);
+//                    transaction.add(R.id.id_content, tabOneFragment);
+
                 }
+//                else {
+//                    transaction.show(tabOneFragment);
+//                    tabOneFragment.reset();
+//                }
+                transaction.replace(R.id.id_content, tabOneFragment);
+//                tabOneFragment.reset();
                 break;
             case 1:
                 if (tabTwoFragment == null) {
                     tabTwoFragment = TestFragment.newInstance("我是Two");
-                    transaction.add(R.id.id_content, tabTwoFragment);
-                } else {
-                    transaction.show(tabTwoFragment);
+//                    transaction.add(R.id.id_content, tabTwoFragment);
                 }
+//                else {
+//                    transaction.show(tabTwoFragment);
+//                }
+                transaction.replace(R.id.id_content, tabTwoFragment);
                 break;
             case 2:
                 if (tabThreeFragment == null) {
                     tabThreeFragment = TestFragment.newInstance("我是Three");
-                    transaction.add(R.id.id_content, tabThreeFragment);
-                } else {
-                    transaction.show(tabThreeFragment);
+//                    transaction.add(R.id.id_content, tabThreeFragment);
                 }
+//                else {
+//                    transaction.show(tabThreeFragment);
+//                }
+                transaction.replace(R.id.id_content, tabThreeFragment);
                 break;
         }
         transaction.commit();

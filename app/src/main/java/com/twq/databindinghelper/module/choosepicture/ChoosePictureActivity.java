@@ -1,5 +1,6 @@
 package com.twq.databindinghelper.module.choosepicture;
 
+import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
 import android.graphics.Bitmap;
@@ -32,14 +33,15 @@ public class ChoosePictureActivity extends DataBindingActivity<ActivityChoosePic
         getBinding().btnChoose.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                pictureUtil = new PictureUtil((Activity) mContext);
                 if (mBottomSheetDialog == null) {
+                    pictureUtil = new PictureUtil((Activity) mContext);
                     mBottomSheetDialog = new BottomSheetDialog(mContext);
                     View dialogView = LayoutInflater.from(mContext).inflate(R.layout.dialog_choose_picture, null, false);
                     TextView tv_camera = dialogView.findViewById(R.id.tv_camera);
                     TextView tv_photo = dialogView.findViewById(R.id.tv_photo);
                     TextView tv_cancel = dialogView.findViewById(R.id.tv_cancel);
                     tv_camera.setOnClickListener(new View.OnClickListener() {
+                        @SuppressLint("NewApi")
                         @Override
                         public void onClick(View v) {
                             pictureUtil.ChooseCamera();
@@ -47,6 +49,7 @@ public class ChoosePictureActivity extends DataBindingActivity<ActivityChoosePic
                         }
                     });
                     tv_photo.setOnClickListener(new View.OnClickListener() {
+                        @SuppressLint("NewApi")
                         @Override
                         public void onClick(View v) {
                             pictureUtil.ChooseImage();
@@ -66,21 +69,10 @@ public class ChoosePictureActivity extends DataBindingActivity<ActivityChoosePic
                 }
             }
         });
-        getBinding().btnPrint.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                doPhotoPrint();
-            }
-        });
+
     }
 
-    private void doPhotoPrint() {
-        PrintHelper photoPrinter = new PrintHelper(mContext);
-        photoPrinter.setScaleMode(PrintHelper.SCALE_MODE_FIT);
-        Bitmap bitmap = BitmapFactory.decodeResource(getResources(),
-                R.mipmap.ic_app_bg);
-        photoPrinter.printBitmap("droids.jpg - test print", bitmap);
-    }
+
 
     @Override
     protected int getLayoutId() {

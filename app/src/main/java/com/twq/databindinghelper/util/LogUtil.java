@@ -7,7 +7,7 @@ import com.twq.databindinghelper.BuildConfig;
 
 public class LogUtil {
 
-    private static final String TAG = "ChronicMGT";
+    private static final String TAG = "databinging";
     public static boolean isDebug = BuildConfig.DEBUG;
 
     public static int e(String msg) {
