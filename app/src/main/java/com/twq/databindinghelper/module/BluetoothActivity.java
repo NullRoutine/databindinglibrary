@@ -178,7 +178,6 @@ public class BluetoothActivity extends DataBindingActivity<ActivityBluetoothBind
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        unregisterReceiver(receiver);
     }
 
     @Override

@@ -1,11 +1,11 @@
 package com.twq.databindinghelper;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 
 import com.twq.databindinghelper.base.DataBindingActivity;
-import com.twq.databindinghelper.databinding.ActivityMainBinding;
 import com.twq.databindinghelper.databinding.ActivityMainTwoBinding;
 import com.twq.databindinghelper.module.AnimatorActivity;
 import com.twq.databindinghelper.module.BluetoothActivity;
@@ -72,6 +72,7 @@ public class MainActivity extends DataBindingActivity<ActivityMainTwoBinding> {
             @Override
             public void onClick(View v) {
                 launch(mContext, CollapsingToolbarLayoutTestActivity.class, isFinishing());
+//                launch(mContext, TestCollapsingActivity.class, isFinishing());
             }
         });
         getBinding().btnThread.setOnClickListener(new View.OnClickListener() {
@@ -110,10 +111,12 @@ public class MainActivity extends DataBindingActivity<ActivityMainTwoBinding> {
                 launch(mContext, ChoosePictureActivity.class, isFinishing());
             }
         });
-        findView(R.id.btn_print).setOnClickListener(new View.OnClickListener() {
+        getBinding().btnPrint.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                launch(mContext, PrintActivity.class, isFinishing());
+                Intent intent = new Intent(MainActivity.this, PrintActivity.class);
+                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_SINGLE_TOP);//注意
+                startActivity(intent);
             }
         });
     }

@@ -1,6 +1,5 @@
 package com.twq.databindinghelper.module;
 
-import android.annotation.SuppressLint;
 import android.app.PendingIntent;
 import android.content.Context;
 import android.content.Intent;
@@ -10,25 +9,19 @@ import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.Typeface;
 import android.graphics.pdf.PdfDocument;
-import android.nfc.FormatException;
 import android.nfc.NdefMessage;
 import android.nfc.NdefRecord;
 import android.nfc.NfcAdapter;
 import android.nfc.Tag;
 import android.nfc.tech.IsoDep;
-import android.nfc.tech.MifareClassic;
 import android.nfc.tech.Ndef;
 import android.nfc.tech.NfcA;
 import android.os.Build;
 import android.os.Bundle;
-import android.os.CancellationSignal;
 import android.os.Environment;
-import android.os.ParcelFileDescriptor;
 import android.os.Parcelable;
-import android.print.PageRange;
 import android.print.PrintAttributes;
 import android.print.PrintDocumentAdapter;
-import android.print.PrintDocumentInfo;
 import android.print.PrintJob;
 import android.print.PrintManager;
 import android.support.annotation.RequiresApi;
@@ -50,12 +43,7 @@ import com.twq.databindinghelper.databinding.ActivityPrintBinding;
 import com.twq.databindinghelper.util.LogUtil;
 
 import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
-import java.io.IOException;
-import java.io.InputStream;
-import java.io.OutputStream;
 import java.io.UnsupportedEncodingException;
 import java.nio.charset.Charset;
 import java.util.ArrayList;
@@ -527,70 +515,6 @@ public class PrintActivity extends DataBindingActivity<ActivityPrintBinding> {
             }
         }).start();
 
-    }
-
-    @RequiresApi(api = Build.VERSION_CODES.KITKAT)
-    public class MyPrintPdfAdapter extends PrintDocumentAdapter {
-        private String mFilePath;
-
-        public MyPrintPdfAdapter(String file) {
-            this.mFilePath = file;
-            Log.e("TAG", file);
-        }
-
-        @Override
-        public void onLayout(PrintAttributes oldAttributes, PrintAttributes newAttributes,
-                             CancellationSignal cancellationSignal,
-                             LayoutResultCallback callback, Bundle extras) {
-            if (cancellationSignal.isCanceled()) {
-                callback.onLayoutCancelled();
-                return;
-            }
-            PrintDocumentInfo info = new PrintDocumentInfo.Builder("name")
-                    .setContentType(PrintDocumentInfo.CONTENT_TYPE_DOCUMENT)
-                    .build();
-            callback.onLayoutFinished(info, true);
-        }
-
-        @Override
-        public void onWrite(PageRange[] pages, ParcelFileDescriptor destination,
-                            CancellationSignal cancellationSignal,
-                            WriteResultCallback callback) {
-            InputStream input = null;
-            OutputStream output = null;
-
-            try {
-
-                input = new FileInputStream(mFilePath);
-                output = new FileOutputStream(destination.getFileDescriptor());
-
-                byte[] buf = new byte[1024];
-                int bytesRead;
-
-                while ((bytesRead = input.read(buf)) > 0) {
-                    output.write(buf, 0, bytesRead);
-                }
-
-                callback.onWriteFinished(new PageRange[]{PageRange.ALL_PAGES});
-
-            } catch (FileNotFoundException e) {
-                e.printStackTrace();
-            } catch (Exception e) {
-                e.printStackTrace();
-            } finally {
-                try {
-                    output.close();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-
-                try {
-                    input.close();
-                } catch (IOException e) {
-                    e.printStackTrace();
-                }
-            }
-        }
     }
 
 }
