@@ -70,7 +70,7 @@ public class WaveViewTwo extends View {
                 mViewPaint.setShader(mWaveShader);
             }
             //这里是利用举证的平移变化产生平移效果
-            mShaderMatrix.setScale(0.5f, 0.5f, 0, mDefaultWaterLevel);
+            mShaderMatrix.setScale(0.5f, 0.5f, 0, mDefaultWaterLevel);//这里其实是没有变化的
             mShaderMatrix.postTranslate(mWaveShiftRatio * getWidth(), 0);
             mWaveShader.setLocalMatrix(mShaderMatrix);
             canvas.drawRect(0, 0, getWidth(), getHeight(), mViewPaint);
@@ -78,7 +78,7 @@ public class WaveViewTwo extends View {
             mViewPaint.setShader(null);
         }
         LogUtil.e("=====<onDraw>");
-//        super.onDraw(canvas);
+        super.onDraw(canvas);//注意取消super
     }
 
     private double mDefaultAngularFrequency;

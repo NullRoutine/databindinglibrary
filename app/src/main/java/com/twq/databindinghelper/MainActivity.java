@@ -115,7 +115,7 @@ public class MainActivity extends DataBindingActivity<ActivityMainTwoBinding> {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, PrintActivity.class);
-                intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_SINGLE_TOP);//注意
+                intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK | Intent.FLAG_ACTIVITY_CLEAR_TOP);//注意
                 startActivity(intent);
             }
         });
