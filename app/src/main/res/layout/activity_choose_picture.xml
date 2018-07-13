@@ -12,6 +12,12 @@
             android:layout_height="@dimen/view_distance_48"
             android:text="选择图片" />
 
+        <Button
+            android:id="@+id/btn_start"
+            android:layout_width="match_parent"
+            android:layout_height="@dimen/view_distance_48"
+            android:text="跳转原生" />
+
         <ImageView
             android:id="@+id/img_photo"
             android:layout_width="120dp"

@@ -2,6 +2,7 @@ package com.twq.databindinghelper.module.choosepicture;
 
 import android.annotation.SuppressLint;
 import android.app.Activity;
+import android.content.ComponentName;
 import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
@@ -69,9 +70,22 @@ public class ChoosePictureActivity extends DataBindingActivity<ActivityChoosePic
                 }
             }
         });
-
+        getBinding().btnStart.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                starAct();
+            }
+        });
     }
 
+    public void starAct() {
+        Intent intent = new Intent();
+        ComponentName cn = new ComponentName("com.zjcdjk.android.chronicMGT", "com.zjcdjk.android.chronicMGT.MainActivity");
+        intent.setComponent(cn);
+        Uri uri = Uri.parse("com.zjcdjk.android.chronicMGT.MainActivity");
+        intent.setData(uri);
+        startActivity(intent);
+    }
 
 
     @Override
