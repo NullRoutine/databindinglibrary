@@ -29,6 +29,7 @@ public class BitmapCompressUtil {
      * @return
      */
     public static Bitmap compressImage(Bitmap image) {//只会保存到文件大小变化，内存中大小不变
+        LogUtil.e("=========>" + image.getByteCount());
         ByteArrayOutputStream baos = new ByteArrayOutputStream();
         image.compress(Bitmap.CompressFormat.JPEG, 100, baos);//质量压缩方法，这里100表示不压缩，把压缩后的数据存放到baos中
         int options = 100;
@@ -59,6 +60,7 @@ public class BitmapCompressUtil {
         // 把ByteArrayInputStream数据生成图片
         ByteArrayInputStream isBm = new ByteArrayInputStream(baos.toByteArray());//把压缩后的数据baos存放到ByteArrayInputStream中
         Bitmap bitmap = BitmapFactory.decodeStream(isBm, null, null);//把ByteArrayInputStream数据生成图片
+        LogUtil.e("=========>" + bitmap.getByteCount());
 //        image.recycle();
         return bitmap;
     }
