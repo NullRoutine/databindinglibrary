@@ -9,7 +9,9 @@ import com.twq.databindinghelper.base.DataBindingActivity;
 import com.twq.databindinghelper.databinding.ActivityMainTwoBinding;
 import com.twq.databindinghelper.module.AnimatorActivity;
 import com.twq.databindinghelper.module.BluetoothActivity;
+import com.twq.databindinghelper.module.CameraTestActivity;
 import com.twq.databindinghelper.module.CollapsingToolbarLayoutTestActivity;
+import com.twq.databindinghelper.module.LoginActivity;
 import com.twq.databindinghelper.module.PrintActivity;
 import com.twq.databindinghelper.module.TestClockActivity;
 import com.twq.databindinghelper.module.TestFragmentActivity;
@@ -17,6 +19,8 @@ import com.twq.databindinghelper.module.TestFragmentTwoActivity;
 import com.twq.databindinghelper.module.TestTextViewActivity;
 import com.twq.databindinghelper.module.TestThreadActivity;
 import com.twq.databindinghelper.module.TestWaterBitmapActivity;
+import com.twq.databindinghelper.module.ViewFlipperActivity;
+import com.twq.databindinghelper.module.WaterFallActivity;
 import com.twq.databindinghelper.module.WaveActivity;
 import com.twq.databindinghelper.module.choosepicture.ChoosePictureActivity;
 import com.twq.databindinghelper.view.dialog.CommonDialog;
@@ -115,7 +119,33 @@ public class MainActivity extends DataBindingActivity<ActivityMainTwoBinding> {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(mContext, PrintActivity.class);
-                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK );//注意
+//                intent.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP | Intent.FLAG_ACTIVITY_NEW_TASK);//注意
+                mContext.startActivity(intent);
+            }
+        });
+        getBinding().btnCamera.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                launch(mContext, CameraTestActivity.class, isFinishing());
+            }
+        });
+        getBinding().btnWaterFall.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                launch(mContext, WaterFallActivity.class, isFinishing());
+            }
+        });
+        getBinding().btnTestLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(mContext, LoginActivity.class);
+                mContext.startActivity(intent);
+            }
+        });
+        getBinding().btnTestViewFlipper.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(mContext, ViewFlipperActivity.class);
                 mContext.startActivity(intent);
             }
         });

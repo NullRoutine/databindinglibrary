@@ -88,12 +88,12 @@ public class PrintActivity extends DataBindingActivity<ActivityPrintBinding> {
         nfcAdapter = NfcAdapter.getDefaultAdapter(this);
         if (nfcAdapter == null) {
 //            promt.setText("设备不支持NFC！");
-            finish();
+//            finish();
             return;
         }
         if (!nfcAdapter.isEnabled()) {
 //            promt.setText("请在系统设置中先启用NFC功能！");
-            finish();
+//            finish();
             return;
         }
     }
@@ -365,9 +365,9 @@ public class PrintActivity extends DataBindingActivity<ActivityPrintBinding> {
         builder.setColorMode(PrintAttributes.COLOR_MODE_COLOR);
         String state = Environment.getExternalStorageState();
         rootDir = state.equals(Environment.MEDIA_MOUNTED) ? Environment.getExternalStorageDirectory() : mContext.getCacheDir();
-        MyPrintAdapter adapter = new MyPrintAdapter(mContext, rootDir + "/TestPrint.pdf");
-//        printManager.print("Test", adapter, builder.build());
-        save(rootDir + "/TestPrint.txt");
+        MyPrintAdapter adapter = new MyPrintAdapter(mContext, rootDir + "/YWYLJG/Document/9-01-1543385103903.pdf");
+        printManager.print("Test", adapter, builder.build());
+//        save(rootDir + "/TestPrint.txt");
     }
 
     @RequiresApi(api = Build.VERSION_CODES.KITKAT)

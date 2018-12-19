@@ -151,7 +151,7 @@ public class FlickerTextView extends AppCompatTextView {
 
                 }
             });
-            animator.start();
+//            animator.start();
         }
     }
 

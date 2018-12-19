@@ -38,5 +38,11 @@
             app:color_move="@color/color_app"
             app:duration_text="2000"
             tools:ignore="HardcodedText" />
+
+        <Button
+            android:id="@+id/btn_start"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="开启" />
     </LinearLayout>
 </layout>

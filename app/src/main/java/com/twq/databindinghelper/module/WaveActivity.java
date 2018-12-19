@@ -1,6 +1,5 @@
 package com.twq.databindinghelper.module;
 
-import android.app.Activity;
 import android.os.Bundle;
 
 import com.twq.databindinghelper.R;

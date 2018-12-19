@@ -17,6 +17,8 @@ import android.support.v7.app.AppCompatActivity;
 import android.view.LayoutInflater;
 import android.view.View;
 
+import com.twq.databindinghelper.view.SwipeBackLayout;
+
 import java.util.ArrayList;
 
 /**
@@ -66,6 +68,8 @@ public abstract class DataBindingActivity<K extends ViewDataBinding> extends App
         if (getPermission() != null) {
             requestPermission();
         }
+        SwipeBackLayout swipeBackLayout = new SwipeBackLayout(this);
+        swipeBackLayout.bindActivity();
     }
 
     /**
@@ -154,7 +158,7 @@ public abstract class DataBindingActivity<K extends ViewDataBinding> extends App
      * 权限请求
      */
     @TargetApi(Build.VERSION_CODES.M)
-    private void requestPermission() {
+    protected void requestPermission() {
         if (getAndroidVersion(Build.VERSION_CODES.M)) {
             String[] permissions = getPermission();
             if (mPermissionList == null) {

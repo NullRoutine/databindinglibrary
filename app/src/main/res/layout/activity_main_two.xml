@@ -101,6 +101,30 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:text="打印相关" />
+
+                <Button
+                    android:id="@+id/btn_camera"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="相机" />
+
+                <Button
+                    android:id="@+id/btn_water_fall"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="瀑布流" />
+
+                <Button
+                    android:id="@+id/btn_test_login"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="测试登录" />
+
+                <Button
+                    android:id="@+id/btn_test_ViewFlipper"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="测试ViewFlipper" />
             </LinearLayout>
         </com.twq.databindinghelper.view.SpringBackScrollview>
     </LinearLayout>

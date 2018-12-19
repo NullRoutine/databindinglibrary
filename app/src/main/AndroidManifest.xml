@@ -2,10 +2,12 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.twq.databindinghelper">
 
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.BLUETOOTH" />
     <!--使用蓝牙所需要的权限-->
     <uses-permission android:name="android.permission.BLUETOOTH_ADMIN" />
     <!--使用扫描和设置蓝牙的权限（申明这一个权限必须申明上面一个权限）-->
+    <uses-permission android:name="android.permission.CHANGE_WIFI_STATE" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-feature android:name="android.hardware.location.gps" />
 
@@ -15,6 +17,10 @@
     <uses-permission android:name="android.permission.CAMERA" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+
+    <uses-feature android:name="android.hardware.camera" />
+    <uses-feature android:name="android.hardware.camera.autofocus" />
+
     <uses-permission android:name="android.permission.NFC" />
     <!-- 要求当前设备必须要有NFC芯片 -->
     <uses-feature
@@ -23,11 +29,20 @@
 
     <application
         android:allowBackup="true"
+        android:name=".net.BaseApplication"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
+        <service
+            android:name=".service.MyVpnService"
+            android:permission="android.permission.BIND_VPN_SERVICE">
+            <intent-filter>
+                <action android:name="android.net.VpnService" />
+            </intent-filter>
+        </service>
         <!--7.0拍照-->
         <provider
             android:name="android.support.v4.content.FileProvider"
@@ -58,18 +73,21 @@
         <activity android:name=".module.BluetoothActivity" />
         <activity android:name=".module.choosepicture.ChoosePictureActivity" />
         <activity
-            android:name=".module.PrintActivity"
-            android:launchMode="singleTask">
-            <intent-filter>
-                <action android:name="android.nfc.action.TECH_DISCOVERED" />
-                <!--<action android:name="android.nfc.action.TAG_DISCOVERED" />-->
-                <!--<action android:name="android.nfc.action.NDEF_DISCOVERED"/>-->
-            </intent-filter>
-            <meta-data
-                android:name="android.nfc.action.TECH_DISCOVERED"
-                android:resource="@xml/nfc_tech_filter" />
+            android:name=".module.PrintActivity">
+            <!--<intent-filter>-->
+                <!--<action android:name="android.nfc.action.TECH_DISCOVERED" />-->
+                <!--&lt;!&ndash;<action android:name="android.nfc.action.TAG_DISCOVERED" />&ndash;&gt;-->
+                <!--&lt;!&ndash;<action android:name="android.nfc.action.NDEF_DISCOVERED"/>&ndash;&gt;-->
+            <!--</intent-filter>-->
+            <!--<meta-data-->
+                <!--android:name="android.nfc.action.TECH_DISCOVERED"-->
+                <!--android:resource="@xml/nfc_tech_filter" />-->
         </activity>
         <activity android:name=".module.TestCollapsingActivity" />
+        <activity android:name=".module.CameraTestActivity" />
+        <activity android:name=".module.WaterFallActivity" />
+        <activity android:name=".module.LoginActivity" />
+        <activity android:name=".module.ViewFlipperActivity" />
     </application>
 
 </manifest>
