@@ -58,6 +58,7 @@ public abstract class DataBindingFragment<K extends ViewDataBinding> extends Fra
         }
         this.layoutInflater = inflater;
         initView();
+        isInitView = true;
         LogUtil.e("Fragment onCreateView===>" + this.getClass().getName());
         return convertView;
     }
@@ -88,7 +89,7 @@ public abstract class DataBindingFragment<K extends ViewDataBinding> extends Fra
     @Override
     public void onResume() {
         super.onResume();
-        Log.e("TAG",getClass().getSimpleName()+"onResume");
+        Log.e("TAG", getClass().getSimpleName() + "onResume");
     }
 
     @Override

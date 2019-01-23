@@ -22,7 +22,6 @@ public class LoadImgUtil {
     public static void loadImage(Context context, String url, ImageView img) {
         Glide.with(context).load(url)
                 .thumbnail(0.4f)
-                .skipMemoryCache(true)
                 .dontAnimate().into(img);
     }
 

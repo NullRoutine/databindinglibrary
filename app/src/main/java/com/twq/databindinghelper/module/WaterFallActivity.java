@@ -2,7 +2,10 @@ package com.twq.databindinghelper.module;
 
 import android.content.Context;
 import android.os.Bundle;
+import android.os.Handler;
+import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.widget.RecyclerView;
+import android.support.v7.widget.SimpleItemAnimator;
 import android.support.v7.widget.StaggeredGridLayoutManager;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -31,9 +34,12 @@ public class WaterFallActivity extends DataBindingActivity<ActivityWaterFallBind
     public void create(Bundle savedInstanceState) {
         getBinding().recycleView.setHasFixedSize(true);
         getBinding().recycleView.setLayoutManager(new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL));
+        ((SimpleItemAnimator) getBinding().recycleView.getItemAnimator()).setSupportsChangeAnimations(false);
+        getBinding().recycleView.getItemAnimator().setChangeDuration(0);// 通过设置动画执行时间为0来解决闪烁问题
         apter = new WaterFallAdapter(new ArrayList<String>(), mContext);
+        apter.setHasStableIds(true);
         getBinding().recycleView.setAdapter(apter);
-        List<String> list = new ArrayList<>();
+        final List<String> list = new ArrayList<>();
         for (int i = 0; i < 100; i++) {
             list.add("https://ws1.sinaimg.cn/large/0065oQSqly1fuh5fsvlqcj30sg10onjk.jpg");
         }
@@ -47,6 +53,18 @@ public class WaterFallActivity extends DataBindingActivity<ActivityWaterFallBind
 //                } else {
 //                    apter.setFlying(true);
 //                }
+            }
+        });
+        getBinding().SwipeRefreshLayout.setOnRefreshListener(new SwipeRefreshLayout.OnRefreshListener() {
+            @Override
+            public void onRefresh() {
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        apter.setImgUrlList(list);
+                        getBinding().SwipeRefreshLayout.setRefreshing(false);
+                    }
+                }, 2000);
             }
         });
     }
@@ -68,8 +86,11 @@ public class WaterFallActivity extends DataBindingActivity<ActivityWaterFallBind
         }
 
         public void setImgUrlList(List<String> imgUrlList) {
-            this.imgUrlList = imgUrlList;
+//            this.imgUrlList.clear();
+//            notifyDataSetChanged();
+            this.imgUrlList.addAll(imgUrlList);
             notifyDataSetChanged();
+//            notifyItemRangeChanged(0,imgUrlList.size());
         }
 
         public WaterFallAdapter(List<String> imgUrlList, Context context) {
@@ -112,6 +133,11 @@ public class WaterFallActivity extends DataBindingActivity<ActivityWaterFallBind
         @Override
         public int getItemCount() {
             return imgUrlList.size() > 0 ? imgUrlList.size() : 0;
+        }
+
+        @Override
+        public long getItemId(int position) {
+            return position;
         }
 
         static class OneViewHolder extends RecyclerView.ViewHolder {

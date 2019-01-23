@@ -33,6 +33,7 @@ public class TestFragmentTwoActivity extends DataBindingActivity<ActivityTestFra
         list.add(TestFragment.newInstance("我是One"));
         list.add(TestFragment.newInstance("我是Two"));
         list.add(TestFragment.newInstance("我是Three"));
+        list.add(TestFragment.newInstance("我是four"));
         ViewPagerAdapter adapter = new ViewPagerAdapter(getSupportFragmentManager(), list);
         getBinding().viewPager.setAdapter(adapter);
         getBinding().viewPager.setOffscreenPageLimit(3);
@@ -56,6 +57,9 @@ public class TestFragmentTwoActivity extends DataBindingActivity<ActivityTestFra
                     case 2:
                         getBinding().radioManager.setChecked(true);
                         break;
+                    case 3:
+                        getBinding().radioManager2.setChecked(true);
+                        break;
                 }
             }
 
@@ -77,6 +81,9 @@ public class TestFragmentTwoActivity extends DataBindingActivity<ActivityTestFra
                     case R.id.radio_manager:
                         getBinding().viewPager.setCurrentItem(2, true);
                         break;
+                    case R.id.radio_manager2:
+                        getBinding().viewPager.setCurrentItem(3, true);
+                        break;
                 }
             }
         });
@@ -86,6 +93,7 @@ public class TestFragmentTwoActivity extends DataBindingActivity<ActivityTestFra
         getBinding().radioHome.setChecked(false);
         getBinding().radioCenter.setChecked(false);
         getBinding().radioManager.setChecked(false);
+        getBinding().radioManager2.setChecked(false);
     }
 
     private class ViewPagerAdapter extends FragmentPagerAdapter {
