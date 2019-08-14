@@ -6,11 +6,7 @@
         android:layout_height="match_parent"
         android:orientation="vertical">
 
-        <!--<com.twq.databindinghelper.view.ClockView-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content" />-->
-
-        <com.twq.databindinghelper.view.TimeClockView
+        <com.twq.databindinghelper.view.SignView
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
     </LinearLayout>

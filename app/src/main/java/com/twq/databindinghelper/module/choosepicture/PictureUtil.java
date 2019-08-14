@@ -2,8 +2,11 @@ package com.twq.databindinghelper.module.choosepicture;
 
 import android.Manifest;
 import android.app.Activity;
+import android.content.ActivityNotFoundException;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.content.pm.PackageManager;
+import android.content.pm.ResolveInfo;
 import android.net.Uri;
 import android.os.Build;
 import android.os.Environment;
@@ -13,15 +16,20 @@ import android.support.v4.content.ContextCompat;
 import android.support.v4.content.FileProvider;
 import android.support.v4.content.PermissionChecker;
 import android.util.Log;
+import android.widget.Button;
 import android.widget.Toast;
 
 import com.tbruyelle.rxpermissions2.RxPermissions;
 import com.twq.databindinghelper.BuildConfig;
+import com.twq.databindinghelper.R;
 
 import java.io.File;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Hashtable;
+import java.util.List;
 import java.util.Locale;
+import java.util.Map;
 
 import io.reactivex.functions.Consumer;
 
@@ -218,6 +226,8 @@ public class PictureUtil {
             String authority = BuildConfig.APPLICATION_ID;
             if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
                 cameraUri = FileProvider.getUriForFile(activity, authority, cameraFile);//通过FileProvider创建一个content类型的Uri
+                cameraIntent.addFlags(Intent.FLAG_GRANT_READ_URI_PERMISSION);
+                cameraIntent.addFlags(Intent.FLAG_GRANT_WRITE_URI_PERMISSION);
             } else {
                 cameraUri = Uri.fromFile(cameraFile);
             }
@@ -307,4 +317,7 @@ public class PictureUtil {
     public interface ChooseListener {
         void choose(Uri uri, String path);
     }
+
+
+
 }

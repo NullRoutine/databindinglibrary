@@ -4,6 +4,28 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
+    <android.support.v4.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/recycle_View"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content" />
+
+            <EditText
+                android:layout_width="match_parent"
+                android:layout_height="@dimen/view_distance_48"
+                android:hint="输入账号" />
+        </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
+
     <EditText
         android:id="@+id/edt_code"
         android:layout_width="match_parent"

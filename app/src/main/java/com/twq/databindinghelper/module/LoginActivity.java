@@ -1,11 +1,13 @@
 package com.twq.databindinghelper.module;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.net.wifi.WifiInfo;
 import android.net.wifi.WifiManager;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -29,22 +31,25 @@ public class LoginActivity extends AppCompatActivity {
 
     EditText edt_code, edt_password;
     Button btn_login;
+    RecyclerView recyclerView;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_test_login);
-        edt_code = findViewById(R.id.edt_code);
-        edt_password = findViewById(R.id.edt_password);
-        btn_login = findViewById(R.id.btn_login);
-        btn_login.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                doLogin(edt_code.getText().toString(), edt_password.getText().toString());
-            }
-        });
+        setContentView(R.layout.activity_commodity_add);
+//        edt_code = findViewById(R.id.edt_code);
+//        edt_password = findViewById(R.id.edt_password);
+//        btn_login = findViewById(R.id.btn_login);
+//        btn_login.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View v) {
+//                doLogin(edt_code.getText().toString(), edt_password.getText().toString());
+//            }
+//        });
+//        recyclerView = findViewById(R.id.recycle_View);
     }
 
+    @SuppressLint("CheckResult")
     private void doLogin(String usr, String pass) {
         Map<String, String> map = new HashMap<>();
         map.put("DEVICE_ID", "318A92B9E1");

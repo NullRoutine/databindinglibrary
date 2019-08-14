@@ -125,6 +125,13 @@
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:text="测试ViewFlipper" />
+
+                <Button
+                    android:id="@+id/btn_sign"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:text="签名" />
+
             </LinearLayout>
         </com.twq.databindinghelper.view.SpringBackScrollview>
     </LinearLayout>

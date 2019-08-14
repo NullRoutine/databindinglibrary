@@ -88,6 +88,7 @@
         <activity android:name=".module.WaterFallActivity" />
         <activity android:name=".module.LoginActivity" />
         <activity android:name=".module.ViewFlipperActivity" />
+        <activity android:name=".module.SignActivity" />
     </application>
 
 </manifest>

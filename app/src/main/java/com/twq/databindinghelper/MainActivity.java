@@ -13,6 +13,7 @@ import com.twq.databindinghelper.module.CameraTestActivity;
 import com.twq.databindinghelper.module.CollapsingToolbarLayoutTestActivity;
 import com.twq.databindinghelper.module.LoginActivity;
 import com.twq.databindinghelper.module.PrintActivity;
+import com.twq.databindinghelper.module.SignActivity;
 import com.twq.databindinghelper.module.TestClockActivity;
 import com.twq.databindinghelper.module.TestFragmentActivity;
 import com.twq.databindinghelper.module.TestFragmentTwoActivity;
@@ -147,6 +148,12 @@ public class MainActivity extends DataBindingActivity<ActivityMainTwoBinding> {
             public void onClick(View v) {
                 Intent intent = new Intent(mContext, ViewFlipperActivity.class);
                 mContext.startActivity(intent);
+            }
+        });
+        getBinding().btnSign.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                launch(mContext, SignActivity.class, isFinishing());
             }
         });
     }
